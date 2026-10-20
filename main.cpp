@@ -2,13 +2,24 @@
 using namespace std;
 #include <string>
 //---------------------------------
-int intro(){
+string askName(){
 
-//intro
 string usrName;
 cout << "Please enter your name: \n";
 getline (cin, usrName);
 cout << "Hello, " << usrName << "! Welcome to my Color Vision Project."<< endl;
+
+return usrName;
+}
+
+
+string intro(){
+
+//intro
+string usrName = askName();
+// cout << "Please enter your name: \n";
+// getline (cin, usrName);
+// cout << "Hello, " << usrName << "! Welcome to my Color Vision Project."<< endl;
 
 //Asks if they would like to skip background info
 char skipIntro;
@@ -30,7 +41,7 @@ if(skipIntro == 'Y' || skipIntro == 'y'){
 else if (skipIntro == 'N' || skipIntro == 'n'){
 
 }
-    return 0;
+    return usrName;
 }
 //--------------------------
 //color pick
@@ -524,7 +535,7 @@ while (rating != 'Y' && rating !=  'y' && rating !=  'N' && rating  !=  'n' ){
         break;
 
     }// end of switch
-    return 0;
+    return rates;
 }//end of rate
 
 //---------------------------------------
